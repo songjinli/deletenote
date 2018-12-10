@@ -1,0 +1,38 @@
+/**************************************************************
+	this program use to remove note in file, such as :
+		1. printf("");  //note
+		2. printf("");  /*note*/
+
+	Program Usage:
+		./mynote [file/directory]
+		
+	Notice:
+		1. when the param is directory, program can judge the tail
+	of the filename and just hanle the 'c' file and 'h' file.
+
+		2. when handle a file, program print the detail relate to 
+	the note like this:
+		> ./mynote test.txt
+			file:		test.txt
+			count:		4
+			blank:		0
+			note:		2
+			code:		1
+			combine:	1
+
+		count:		the total line of the file.
+		blank:		blank line of the file.	
+		note:		note line of the file.		such as:  //note   or   /*note*/
+		combine:	note in code line.			such as:  printf("%d\n", value/*note*/);
+
+
+	Result:
+		whether file or directory, we make a copy and name it 
+	with 'unix timestamp'+filename. for example:
+		> ls
+			hello.c
+		> ./mynote hello.c  
+		> ls
+			hello.c		1514540003_hello.c
+
+****************************************************************/
